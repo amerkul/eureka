@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: eureka
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+server:
+  port: 8070
+eureka:
+  instance:
+    hostname: eureka
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
